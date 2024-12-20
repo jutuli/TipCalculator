@@ -45,17 +45,18 @@ function calculateTip(event: Event) {
     ".individualShare"
   ) as HTMLElement;
 
+  // Declare Output Calculation Variables
   let tipResult;
   let totalAmount;
 
   if (serviceSatisfactionSelect === 1) {
-    tipResult = serviceSatisfactionSelect * 1.02;
+    tipResult = billInput * 1.02;
   } else if (serviceSatisfactionSelect === 2) {
-    tipResult = serviceSatisfactionSelect * 1.1;
+    tipResult = billInput * 1.1;
   } else if (serviceSatisfactionSelect === 3) {
-    tipResult = serviceSatisfactionSelect * 1.15;
+    tipResult = billInput * 1.15;
   } else if (serviceSatisfactionSelect === 4) {
-    tipResult = serviceSatisfactionSelect * 1.2;
+    tipResult = billInput * 1.2;
   }
 
   totalAmount = billInput + tipResult;
