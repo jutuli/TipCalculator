@@ -5,34 +5,38 @@ document
 
 // - Calculate Tip Function
 function calculateTip(event: Event) {
-  // event.preventDefault
+  // Prevent Default Page Reload
   event.preventDefault();
-  // getElementbyId for Inputs
+
+  // Get Values of Form Input Elements in HTML
   const billInput = parseFloat(
     (document.getElementById("billAmount") as HTMLInputElement).value
   );
-  const sharersInput = parseInt(
+  let sharersInput = parseInt(
     (document.getElementById("numberSharers") as HTMLInputElement).value
   );
   const serviceSatisfactionSelect = parseInt(
     (document.getElementById("serviceSatisfaction") as HTMLSelectElement).value
   );
 
-  // Input Validation
-  // if (isNaN(billInput) || billInput == null || billInput <= 0) {
-  //   window.alert("Please provide the correct bill amount");
-  //   return false;
-  // }
-  // if (
-  //   isNaN(serviceSatisfactionSelect) ||
-  //   serviceSatisfactionSelect == null ||
-  //   serviceSatisfactionSelect <= 0
-  // ) {
-  //   window.alert("Please choose a satisfaction level");
-  //   return false;
-  // }
+  // Validate Form Inputs
+  if (isNaN(billInput) || billInput <= 0) {
+    window.alert(
+      "Please provide the exact bill amount as a number (decimal separator is .)"
+    );
+    return false;
+  }
 
-  // getElementbyId for Outputs
+  if (isNaN(sharersInput) || sharersInput <= 0) {
+    sharersInput = 1;
+  }
+
+  if (isNaN(serviceSatisfactionSelect) || serviceSatisfactionSelect <= 0) {
+    window.alert("Please choose a satisfaction level");
+    return false;
+  }
+
+  // Get Output Elements from HTML
   const suggestedTipHTML = document.querySelector(
     ".suggestedTip"
   ) as HTMLElement;
