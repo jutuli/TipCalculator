@@ -50,13 +50,13 @@ function calculateTip(event: Event) {
   let totalAmount = billInput;
 
   if (serviceSatisfactionSelect === 1) {
-    tipResult = billInput * 1.02;
+    tipResult = billInput * 0.02;
   } else if (serviceSatisfactionSelect === 2) {
-    tipResult = billInput * 1.1;
+    tipResult = billInput * 0.1;
   } else if (serviceSatisfactionSelect === 3) {
-    tipResult = billInput * 1.15;
+    tipResult = billInput * 0.15;
   } else if (serviceSatisfactionSelect === 4) {
-    tipResult = billInput * 1.2;
+    tipResult = billInput * 0.2;
   }
 
   totalAmount = billInput + tipResult;
