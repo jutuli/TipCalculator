@@ -68,18 +68,21 @@ function calculateTip(event: Event) {
   if (suggestedTipHTML !== null && suggestedTipHTML !== undefined) {
     (suggestedTipHTML as HTMLElement).innerText = tipResult
       .toFixed(2)
-      .toString();
+      .toString()
+      .concat(" €");
   }
 
   if (totalAmountHTML !== null && totalAmountHTML !== undefined) {
     (totalAmountHTML as HTMLElement).innerText = totalAmount
       .toFixed(2)
-      .toString();
+      .toString()
+      .concat(" €");
   }
 
   if (individualAmountHTML !== null && individualAmountHTML !== undefined) {
     (individualAmountHTML as HTMLElement).innerText = individualAmount
       .toFixed(2)
-      .toString();
+      .toString()
+      .concat(" €");
   }
 }
