@@ -49,6 +49,7 @@ function calculateTip(event: Event) {
   let tipResult = 0;
   let totalAmount = billInput;
 
+  // Calculate Tip, Total Amount + Individual Contribution
   if (serviceSatisfactionSelect === 1) {
     tipResult = billInput * 0.02;
   } else if (serviceSatisfactionSelect === 2) {
@@ -63,9 +64,22 @@ function calculateTip(event: Event) {
 
   let individualAmount = totalAmount / sharersInput;
 
+  // Write Results to HTML
   if (suggestedTipHTML !== null && suggestedTipHTML !== undefined) {
     (suggestedTipHTML as HTMLElement).innerText = tipResult
-      ?.toFixed(2)
+      .toFixed(2)
+      .toString();
+  }
+
+  if (totalAmountHTML !== null && totalAmountHTML !== undefined) {
+    (totalAmountHTML as HTMLElement).innerText = totalAmount
+      .toFixed(2)
+      .toString();
+  }
+
+  if (individualAmountHTML !== null && individualAmountHTML !== undefined) {
+    (individualAmountHTML as HTMLElement).innerText = individualAmount
+      .toFixed(2)
       .toString();
   }
 }
