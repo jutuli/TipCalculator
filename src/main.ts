@@ -1,4 +1,12 @@
-function calculateTip() {
+// Adding Event Listener for Form Submit
+document
+  .getElementById("tipCalculationForm")
+  ?.addEventListener("submit", calculateTip);
+
+// - Calculate Tip Function
+function calculateTip(event: Event) {
+  // event.preventDefault
+  event.preventDefault();
   // getElementbyId for Inputs
   const billInput = parseFloat(
     (document.getElementById("billAmount") as HTMLInputElement).value
@@ -7,7 +15,7 @@ function calculateTip() {
     (document.getElementById("numberSharers") as HTMLInputElement).value
   );
   const serviceSatisfactionSelect = parseInt(
-    (document.getElementById("serviceSatisfaction") as HTMLInputElement).value
+    (document.getElementById("serviceSatisfaction") as HTMLSelectElement).value
   );
 
   // Input Validation
