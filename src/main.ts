@@ -1,3 +1,6 @@
+// Imports
+import "./styles/style.css";
+
 // Adding Event Listener for Form Submit
 document
   .getElementById("tipCalculationForm")
