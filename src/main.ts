@@ -46,8 +46,8 @@ function calculateTip(event: Event) {
   ) as HTMLElement;
 
   // Declare Output Calculation Variables
-  let tipResult;
-  let totalAmount;
+  let tipResult = 0;
+  let totalAmount = billInput;
 
   if (serviceSatisfactionSelect === 1) {
     tipResult = billInput * 1.02;
