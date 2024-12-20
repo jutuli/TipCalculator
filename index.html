@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+
+    <main>
+      <h1>Tip Calculator</h1>
+      <form id="tipCalculationForm">
+        <div>
+          <img src="" alt="Euro Icon" />
+          <label for="billAmount">How much was the bill?</label>
+          <input
+            type="number"
+            step="0.01"
+            qname="amount"
+            id="billAmount"
+            required
+          />
+        </div>
+        <div>
+          <img src="" alt="Two People Icon" />
+          <label for="numberSharers"
+            >How many people are sharing the bill?</label
+          >
+          <input type="number" name="sharers" id="numberSharers" />
+        </div>
+        <div>
+          <select name="service" id="serviceSatisfaction" required>
+            <option value="" disabled selected>How was the service?</option>
+            <option value="1">Bad</option>
+            <option value="2">Okay</option>
+            <option value="3">Good</option>
+            <option value="4">Outstanding</option>
+          </select>
+        </div>
+        <button type="submit">Calculate</button>
+      </form>
+      <p>The suggested tip is: <span class="suggestedTip"></span></p>
+      <p>The total is: <span class="sum"></span></p>
+      <p>The amount per person is: <span class="individualShare"></span></p>
+    </main>
+  </body>
+</html>
