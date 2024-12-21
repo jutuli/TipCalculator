@@ -1,5 +1,5 @@
 // Imports
-import "./styles/style.css";
+import "./assets/css/style.css";
 
 // Adding Event Listener for Form Submit
 document
