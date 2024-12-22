@@ -99,4 +99,4 @@ The Tip Calculator features:
 
 The following flowchart outlines the application's core logic:
 <br>
-<img src="./src/assets/img/flowchartTipCalculator.png" alt="Flowchart for Tip Calculator" height="500">
+<img src="./src/assets/img/flowchart-tip-calculator.png" alt="Flowchart for Tip Calculator" height="500">
