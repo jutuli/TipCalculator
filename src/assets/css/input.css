@@ -3,16 +3,27 @@
 @tailwind utilities;
 
 @layer components {
+  #tipCalculationForm {
+    @apply flex flex-col gap-5;
+  }
+  .input-section {
+    @apply flex flex-col gap-1;
+  }
+
   .input-row {
     @apply flex gap-2 items-center;
   }
 
   input,
   select {
-    @apply border border-gray-300 rounded-md px-2;
+    @apply border border-gray-300 rounded-md px-2 w-full;
   }
 
   .icon-box {
     @apply p-1 bg-yellow-400 rounded-md;
+  }
+
+  label {
+    @apply px-8;
   }
 }

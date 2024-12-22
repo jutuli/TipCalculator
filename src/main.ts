@@ -88,4 +88,7 @@ function calculateTip(event: Event) {
       .toString()
       .concat(" €");
   }
+
+  // Show Results in HTML
+  document.getElementById("results")?.classList.remove("hidden");
 }

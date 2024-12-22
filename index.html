@@ -13,7 +13,7 @@
     <main>
       <div class="flex w-screen h-screen items-center justify-center">
         <div
-          class="flex flex-col justify-center w-2/5 h-1/2 min-w[45rem] min-h[45rem] rounded-md px-6 py-6 gap-4 bg-slate-200"
+          class="flex flex-col justify-center w-2/5 min-w[45rem] min-h[45rem] rounded-md px-6 py-6 gap-4 bg-slate-200"
         >
           <h1 class="text-center text-2xl font-semibold">Tip Calculator</h1>
           <form id="tipCalculationForm">
@@ -32,6 +32,7 @@
                   step="0.01"
                   qname="amount"
                   id="billAmount"
+                  min="0.01"
                   required
                 />
               </div>
@@ -53,14 +54,25 @@
                   value="1"
                   name="sharers"
                   id="numberSharers"
+                  min="1"
                 />
               </div>
             </section>
             <section class="input-section">
+              <label for="serviceSatisfaction"
+                >How was the quality of service?</label
+              >
               <div class="input-row">
+                <div class="icon-box">
+                  <img
+                    class="size-4"
+                    src="./src/assets/img/rating-icon.svg"
+                    alt="Two People Icon"
+                  />
+                </div>
                 <select name="service" id="serviceSatisfaction" required>
                   <option value="" disabled selected>
-                    How was the service?
+                    Select a rating for the service quality
                   </option>
                   <option value="1">Bad</option>
                   <option value="2">Okay</option>
@@ -70,13 +82,13 @@
               </div>
             </section>
             <button
-              class="focus:outline-none text-white shadow bg-sky-800 hover:bg-sky-900 rounded-md px-5 py-2.5"
+              class="rounded-md px-5 py-2.5 w-1/2 self-center text-white bg-sky-800 hover:bg-sky-950 duration-200"
               type="submit"
             >
               Calculate
             </button>
           </form>
-          <div>
+          <div id="results" class="hidden">
             <p>The suggested tip is: <span class="suggestedTip"></span></p>
             <p>The total is: <span class="sum"></span></p>
             <p>
