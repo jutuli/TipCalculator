@@ -26,4 +26,8 @@
   label {
     @apply px-8;
   }
+
+  p {
+    @apply py-1;
+  }
 }
