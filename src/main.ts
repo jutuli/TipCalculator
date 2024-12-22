@@ -92,3 +92,13 @@ function calculateTip(event: Event) {
   // Show Results in HTML
   document.getElementById("results")?.classList.remove("hidden");
 }
+
+// Adding Event Listener for Form Reset
+document.getElementById("formReset")?.addEventListener("click", resetForm);
+
+// - Reset Form Function
+function resetForm() {
+  (document.getElementById("tipCalculationForm") as HTMLFormElement).reset();
+  // Hide Results in HTML
+  document.getElementById("results")?.classList.add("hidden");
+}
