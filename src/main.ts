@@ -68,25 +68,16 @@ function calculateTip(event: Event) {
   let individualAmount = totalAmount / sharersInput;
 
   // Write Results to HTML
-  if (suggestedTipHTML !== null && suggestedTipHTML !== undefined) {
-    (suggestedTipHTML as HTMLElement).innerText = tipResult
-      .toFixed(2)
-      .toString()
-      .concat(" €");
+  if (suggestedTipHTML) {
+    suggestedTipHTML.innerText = `${tipResult.toFixed(2)} €`;
   }
 
-  if (totalAmountHTML !== null && totalAmountHTML !== undefined) {
-    (totalAmountHTML as HTMLElement).innerText = totalAmount
-      .toFixed(2)
-      .toString()
-      .concat(" €");
+  if (totalAmountHTML) {
+    totalAmountHTML.innerText = `${totalAmount.toFixed(2)} €`;
   }
 
-  if (individualAmountHTML !== null && individualAmountHTML !== undefined) {
-    (individualAmountHTML as HTMLElement).innerText = individualAmount
-      .toFixed(2)
-      .toString()
-      .concat(" €");
+  if (individualAmountHTML) {
+    individualAmountHTML.innerText = `${individualAmount.toFixed(2)} €`;
   }
 
   // Show Results in HTML
