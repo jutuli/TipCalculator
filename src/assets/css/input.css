@@ -11,16 +11,16 @@
   }
 
   .input-row {
-    @apply flex gap-2 items-center;
+    @apply flex gap-2 items-center justify-center;
   }
 
   input,
   select {
-    @apply border border-gray-300 rounded-md px-2 w-full;
+    @apply rounded-md px-2 py-1 w-full border-transparent focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400 appearance-none outline-none;
   }
 
   .icon-box {
-    @apply p-1 bg-yellow-400 rounded-md;
+    @apply p-1.5 bg-yellow-400 rounded-md;
   }
 
   button {
@@ -37,5 +37,9 @@
 
   img {
     @apply size-4;
+  }
+
+  .emoji-button {
+    @apply text-2xl px-4 py-1 bg-gray-200 rounded-md hover:bg-gray-300 focus:bg-gray-300 focus:ring-2 focus:ring-sky-400;
   }
 }
