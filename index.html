@@ -55,50 +55,39 @@
               <label for="serviceSatisfaction"
                 >How was the quality of service?</label
               >
-              <div class="input-row">
+              <div class="input-row" id="serviceSatisfaction">
                 <button
                   type="button"
-                  class="emoji-button"
+                  class="service-quality-button"
                   data-value="1"
-                  aria-label="bad">
+                  name="bad"
+                  aria-selected="false">
                   ☹️
                 </button>
                 <button
                   type="button"
-                  class="emoji-button"
+                  class="service-quality-button"
                   data-value="2"
-                  aria-label="okay">
+                  name="okay"
+                  aria-selected="false">
                   😐
                 </button>
                 <button
                   type="button"
-                  class="emoji-button"
+                  class="service-quality-button"
                   data-value="3"
-                  aria-label="good">
+                  name="good"
+                  aria-selected="false">
                   🙂
                 </button>
                 <button
                   type="button"
-                  class="emoji-button"
+                  class="service-quality-button"
                   data-value="4"
-                  aria-label="outstanding">
+                  name="outstanding"
+                  aria-selected="false">
                   🤩
                 </button>
-
-                <!-- <div class="icon-box">
-                  <img
-                    src="./src/assets/img/rating-icon.svg"
-                    alt="Two People Icon" />
-                </div>
-                <select name="service" id="serviceSatisfaction" required>
-                  <option value="" disabled selected>
-                    Select a rating for the service quality
-                  </option>
-                  <option aria-label="bad" value="1">☹️</option>
-                  <option aria-label="okay" value="2">😐</option>
-                  <option aria-label="good" value="3">🙂</option>
-                  <option aria-label="outstanding" value="4">🤩</option>
-                </select> -->
               </div>
             </section>
             <button
@@ -108,10 +97,14 @@
             </button>
           </form>
           <section id="results" class="hidden">
-            <p>The suggested tip is: <span class="suggestedTip"></span></p>
-            <p>The total is: <span class="sum"></span></p>
             <p>
-              The amount per person is: <span class="individualShare"></span>
+              The suggested tip is:
+              <span class="suggestedTip font-semibold"></span>
+            </p>
+            <p>The total is: <span class="sum font-semibold"></span></p>
+            <p>
+              The amount per person is:
+              <span class="individualShare font-semibold"></span>
             </p>
             <button id="formReset" class="pr-3 py-1 m-0">
               <img src="./src/assets/img/reset-icon.svg" alt="Reset" />

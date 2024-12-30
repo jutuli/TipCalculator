@@ -1,10 +1,43 @@
 // Imports
 import "./assets/css/output.css";
 
-// Adding Event Listener for Form Submit
+// Add Event Listener for Form Submit
 document
   .getElementById("tipCalculationForm")
   ?.addEventListener("submit", calculateTip);
+
+// Add Event Listener for Service Quality Button Choice
+
+document
+  .getElementById("serviceSatisfaction")
+  ?.addEventListener("click", buttonClick);
+
+//- Service Quality Select Button Click Function
+let selectedServiceSatisfactionLevel = 0;
+
+function buttonClick(event: Event) {
+  const serviceQualityChoice = event.target as HTMLButtonElement;
+
+  if (serviceQualityChoice && serviceQualityChoice.dataset.value) {
+    selectedServiceSatisfactionLevel = parseInt(
+      serviceQualityChoice.dataset.value
+    );
+    // Deselect all service-quality-buttons
+    const serviceQualityButtons = document.querySelectorAll(
+      ".service-quality-button"
+    );
+    serviceQualityButtons.forEach((button) => {
+      button.setAttribute("aria-selected", "false");
+    });
+
+    // Select the chosen service-quality-button
+    serviceQualityChoice.setAttribute("aria-selected", "true");
+  } else {
+    window.alert(
+      "There was an error in the choice of the service quality. Please try again"
+    );
+  }
+}
 
 // - Calculate Tip Function
 function calculateTip(event: Event) {
@@ -17,9 +50,6 @@ function calculateTip(event: Event) {
   );
   let sharersInput = parseInt(
     (document.getElementById("numberSharers") as HTMLInputElement).value
-  );
-  const serviceSatisfactionSelect = parseInt(
-    (document.getElementById("serviceSatisfaction") as HTMLSelectElement).value
   );
 
   // Validate Form Inputs
@@ -34,7 +64,10 @@ function calculateTip(event: Event) {
     sharersInput = 1;
   }
 
-  if (isNaN(serviceSatisfactionSelect) || serviceSatisfactionSelect <= 0) {
+  if (
+    isNaN(selectedServiceSatisfactionLevel) ||
+    selectedServiceSatisfactionLevel <= 0
+  ) {
     window.alert("Please choose a satisfaction level");
     return false;
   }
@@ -53,13 +86,13 @@ function calculateTip(event: Event) {
   let totalAmount = billInput;
 
   // Calculate Tip, Total Amount + Individual Contribution
-  if (serviceSatisfactionSelect === 1) {
+  if (selectedServiceSatisfactionLevel === 1) {
     tipResult = billInput * 0.02;
-  } else if (serviceSatisfactionSelect === 2) {
+  } else if (selectedServiceSatisfactionLevel === 2) {
     tipResult = billInput * 0.1;
-  } else if (serviceSatisfactionSelect === 3) {
+  } else if (selectedServiceSatisfactionLevel === 3) {
     tipResult = billInput * 0.15;
-  } else if (serviceSatisfactionSelect === 4) {
+  } else if (selectedServiceSatisfactionLevel === 4) {
     tipResult = billInput * 0.2;
   }
 
@@ -92,4 +125,11 @@ function resetForm() {
   (document.getElementById("tipCalculationForm") as HTMLFormElement).reset();
   // Hide Results in HTML
   document.getElementById("results")?.classList.add("hidden");
+  // Deselect all service-quality-buttons
+  const serviceQualityButtons = document.querySelectorAll(
+    ".service-quality-button"
+  );
+  serviceQualityButtons.forEach((button) => {
+    button.setAttribute("aria-selected", "false");
+  });
 }
