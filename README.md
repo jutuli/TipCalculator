@@ -1,6 +1,6 @@
 # Project - Tip Calculator 💰🧮
 
-<img src="./src/assets/img/screenshot-tip-calculator.png" alt="Screenshot of the Tip Calculator" height="250">
+<img src="./src/assets/img/screenshot-tip-calculator-new.png" alt="Screenshot of the Tip Calculator" height="250">
 
 The Tip Calculator is a user-friendly web application designed to calculate the tip amount, total bill, and split it among multiple people based on the service quality. It features a clean interface, responsive design, and dynamic functionality for a seamless user experience.
 
