@@ -17,6 +17,8 @@ This project was developed as part of my Web Development Bootcamp.
   - [Installation](#installation)
 - [Design](#design)
   - [Logic Flow](#logic-flow)
+    - [Logic Implementation](#logic-implementation)
+    - [Flowchart](#flowchart)
 
 ---
 
@@ -33,6 +35,7 @@ It includes:
 - Real-time input validation for fields like bill amount, number of sharers, and service quality.
 - A responsive layout.
 - Dynamic feedback to display results.
+- A reset feature for clearing the form and results.
 
 ---
 
@@ -96,6 +99,40 @@ The Tip Calculator features:
 - Interactive elements styled using Tailwind CSS.
 
 ### Logic Flow
+
+#### Logic Implementation
+
+**Input of Bill Amount and Number of Sharers:**
+
+- Users enter the bill amount in the provided input field (e.g., 47.32).
+- Users specify the number of people sharing the bill (default is 1).
+- Real-time validation ensures inputs are numeric and greater than zero.
+
+**Service Quality Selection:**
+
+- Users can select from four predefined service levels: ☹️, 😐, 🙂, 🤩.
+- Buttons dynamically update their state (`aria-selected`) based on user interaction.
+
+**Input Validation:**
+
+- Ensures valid input for bill amount and number of sharers.
+- Prompts users for corrections when values are missing or incorrect.
+
+**Calculation:**
+
+- Tip is calculated based on the selected service level (2%, 10%, 15%, or 20% of the bill).
+- The total amount is computed by adding the tip to the bill amount.
+- The per-person amount is derived by dividing the total by the number of sharers.
+
+**Dynamic Feedback:**
+
+- Results are dynamically displayed in a hidden results section, revealed after calculation.
+
+**Reset Functionality:**
+
+- Clears inputs and resets the interface, including service quality button states.
+
+#### Flowchart
 
 The following flowchart outlines the application's core logic:
 <br>
